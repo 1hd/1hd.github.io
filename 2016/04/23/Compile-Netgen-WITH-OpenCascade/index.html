@@ -44,14 +44,14 @@ Netgen5.0.0
 debug     x64
 Netgen5.0.0下载下载源文件: 
 Netgen5.0.0">
-<meta property="og:image" content="http://yoursite.com/E:\hexo\Compile-Netgen-WITH-OpenCascade\4.png">
-<meta property="og:image" content="http://yoursite.com/Compile-Netgen-WITH-OpenCascade/5.png">
-<meta property="og:image" content="http://yoursite.com/E:\hexo/Compile-Netgen-WITH-OpenCascade/6.png">
-<meta property="og:image" content="http://yoursite.com/E:\hexo/Compile-Netgen-WITH-OpenCascade/7.png">
-<meta property="og:image" content="http://yoursite.com/E:\hexo\Compile-Netgen-WITH-OpenCascade\9.png">
-<meta property="og:image" content="http://yoursite.com/E:\hexo\Compile-Netgen-WITH-OpenCascade\10.png">
-<meta property="og:image" content="http://yoursite.com/E:\hexo\Compile-Netgen-WITH-OpenCascade\8.png">
-<meta property="og:updated_time" content="2016-04-23T13:31:59.524Z">
+<meta property="og:image" content="http://7xtbgk.com2.z0.glb.clouddn.com/netgen1.png">
+<meta property="og:image" content="http://7xtbgk.com2.z0.glb.qiniucdn.com/netgen15.png">
+<meta property="og:image" content="http://7xtbgk.com2.z0.glb.qiniucdn.com/netgen16.png">
+<meta property="og:image" content="http://7xtbgk.com2.z0.glb.qiniucdn.com/netgen17.png">
+<meta property="og:image" content="http://7xtbgk.com2.z0.glb.qiniucdn.com/netgen19.png">
+<meta property="og:image" content="http://7xtbgk.com2.z0.glb.qiniucdn.com/netgen110.png">
+<meta property="og:image" content="http://7xtbgk.com2.z0.glb.qiniucdn.com/netgen18.png">
+<meta property="og:updated_time" content="2016-04-24T03:14:38.643Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Compile_Netgen_WITH_OpenCascade | 煎蛋不好吃'Blog">
 <meta name="twitter:description" content="结合OCCT编译Netgendate: 2016-04-23 19:54:25
@@ -66,7 +66,7 @@ Netgen5.0.0
 debug     x64
 Netgen5.0.0下载下载源文件: 
 Netgen5.0.0">
-<meta name="twitter:image" content="http://yoursite.com/E:\hexo\Compile-Netgen-WITH-OpenCascade\4.png">
+<meta name="twitter:image" content="http://7xtbgk.com2.z0.glb.clouddn.com/netgen1.png">
     
     
     
@@ -233,32 +233,32 @@ classes that you can use:
 <p><a href="http://sourceforge.net/projects/netgen-mesher/files/netgen-mesher/Additional%20Files/MSVC2010_Libs/x64/TclTkTixTogl_x64.zip/download" target="_blank" rel="external">TclTkTixTogl_x64.zip</a></p>
 <p><a href="http://www.opencascade.org/" target="_blank" rel="external">Opencascade</a></p>
 <p>注: 这里必须预先已经编译好OCCT6.5.1 本文默认读者已经编译好. 可直接调用库文件进行开发.</p>
-<h2 id="文件排放结构"><a href="#文件排放结构" class="headerlink" title="文件排放结构"></a>文件排放结构</h2><p><img src="E:\hexo\Compile-Netgen-WITH-OpenCascade\4.png" alt="文件结构"></p>
+<h2 id="文件排放结构"><a href="#文件排放结构" class="headerlink" title="文件排放结构"></a>文件排放结构</h2><p><img src="http://7xtbgk.com2.z0.glb.clouddn.com/netgen1.png" alt="文件结构"></p>
 <h2 id="编译前准备工作"><a href="#编译前准备工作" class="headerlink" title="编译前准备工作"></a>编译前准备工作</h2><h3 id="修改windows目录下的postBuild-netgen-bat文件"><a href="#修改windows目录下的postBuild-netgen-bat文件" class="headerlink" title="修改windows目录下的postBuild_netgen.bat文件:"></a>修改windows目录下的postBuild_netgen.bat文件:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">删除下面代码：</span><br><span class="line"></span><br><span class="line">    if defined NETGENDIR  ( </span><br><span class="line">       echo Environment variable NETGENDIR found: %NETGENDIR%</span><br><span class="line">       set INSTALL_FOLDER=%NETGENDIR%\..</span><br><span class="line">    ) else (</span><br><span class="line">       echo Environment variable NETGENDIR not found.... using default location!!!</span><br><span class="line">       if /i &quot;%W_WO_OCC%&quot; == &quot;OCC&quot; (</span><br><span class="line">          set INSTALL_FOLDER=%PROJ_DIR%..\..\%PROJ_NAME%-instOCC_%BUILD_ARCH%</span><br><span class="line">       ) else (</span><br><span class="line">          set INSTALL_FOLDER=%PROJ_DIR%..\..\%PROJ_NAME%-instNoOCC_%BUILD_ARCH%</span><br><span class="line">       )   </span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">替换为</span><br><span class="line"></span><br><span class="line">set INSTALL_FOLDER=G:\netgen5.0</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">在文件末尾添加</span><br><span class="line"></span><br><span class="line">REM *** Copy the 3rd Library files into the Install Folder ***</span><br><span class="line"></span><br><span class="line">    set TCL_LIB_DIR=%INSTALL_FOLDER%\ext_libs\tcl\lib</span><br><span class="line">    set TCL_BIN_DIR=%PROJ_DIR%..\..\ext_libs\tcl\bin</span><br><span class="line">    set PTHREAD_LIB_DIR=%PROJ_DIR%..\..\ext_libs\pthread-w32\lib</span><br><span class="line">    echo Installing 3rd Library files into %INSTALL_FOLDER%\bin ....</span><br><span class="line">    xcopy  &quot;%TCL_BIN_DIR%\*.dll&quot; &quot;%INSTALL_FOLDER%\bin\&quot; /i /d /y</span><br><span class="line">    xcopy  &quot;%PTHREAD_LIB_DIR%\*.dll&quot; &quot;%INSTALL_FOLDER%\bin\&quot; /i /d /y</span><br><span class="line">    xcopy  &quot;%TCL_LIB_DIR%&quot; &quot;%INSTALL_FOLDER%\lib\&quot; /e /i /d /y</span><br><span class="line">    if errorlevel 1 goto ThreerdLibraryFailed</span><br><span class="line">    echo Installing 3rd Library Files: Completed OK!!</span><br><span class="line">    :ThreerdLibraryFailed</span><br><span class="line">    echo POSTBUILD Script for %TCL_LIB_DIR% FAILED.....</span><br></pre></td></tr></table></figure>
 <h2 id="编译Netgen5-0-0"><a href="#编译Netgen5-0-0" class="headerlink" title="编译Netgen5.0.0"></a>编译Netgen5.0.0</h2><p>使用VS2010打开 E:\NetGen5.0\netgen-5.0.0\windows\netgen-5.0.sln</p>
-<h3 id="出现问题1"><a href="#出现问题1" class="headerlink" title="出现问题1"></a>出现问题1</h3><p><img src="/Compile-Netgen-WITH-OpenCascade/5.png" alt="问题1"></p>
+<h3 id="出现问题1"><a href="#出现问题1" class="headerlink" title="出现问题1"></a>出现问题1</h3><p><img src="http://7xtbgk.com2.z0.glb.qiniucdn.com/netgen15.png" alt="问题1"></p>
 <p>解决办法:</p>
-<h3 id="PI问题"><a href="#PI问题" class="headerlink" title="#    PI问题"></a>#    PI问题</h3><p>PI没有定义, 这里我们使用改版后的M_PI</p>
+<h4 id="PI问题"><a href="#PI问题" class="headerlink" title="PI问题"></a>PI问题</h4><p>PI没有定义, 这里我们使用改版后的M_PI</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">在 e:\NetGen\netgen-5.0.0\libsrc\occ\Partition_Loop2d.cxx 文件的开头加入以下宏定义: </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    #ifndef PI</span><br><span class="line">    </span><br><span class="line">    #define PI M_PI</span><br><span class="line">    </span><br><span class="line">    #endif</span><br><span class="line"></span><br><span class="line">`</span><br></pre></td></tr></table></figure>
 <h3 id="value问题"><a href="#value问题" class="headerlink" title="#    value问题"></a>#    value问题</h3><p>value: 不是 Extreme_ExtPS 的成员</p>
-<p><img src="E:\hexo/Compile-Netgen-WITH-OpenCascade/6.png" alt="问题2"></p>
+<p><img src="http://7xtbgk.com2.z0.glb.qiniucdn.com/netgen16.png" alt="问题2"></p>
 <p>在代码中我们可以看到作者为了兼顾OCCT多版本, 所作出的注释<br>所以,我们将V6.3行注释, 删除v6.5行的注释</p>
 <p>接着编译…………</p>
 <h3 id="出现问题2"><a href="#出现问题2" class="headerlink" title="出现问题2"></a>出现问题2</h3><p><strong>无法解析的外部符号 Ng_occ_Init</strong>  </p>
-<p><img src="E:\hexo/Compile-Netgen-WITH-OpenCascade/7.png" alt="Nginit问题"></p>
+<p><img src="http://7xtbgk.com2.z0.glb.qiniucdn.com/netgen17.png" alt="Nginit问题"></p>
 <p>1,在附加目录中包含 (主目录)\libsrc\occ<br>2,在e:\NetGen\netgen-5.0.0\ng\ngpkg.cpp文件中 </p>
 <pre><code>#include &lt;occpkg.cpp&gt;
 </code></pre><p>注意: 该包含放在其他include之前.</p>
 <p>编译……</p>
 <p>问题:</p>
 <p>Ng_occ_Init调用不明确</p>
-<p><img src="E:\hexo\Compile-Netgen-WITH-OpenCascade\9.png" alt="结合OCCT编译Netgen9"></p>
+<p><img src="http://7xtbgk.com2.z0.glb.qiniucdn.com/netgen19.png" alt="结合OCCT编译Netgen9"></p>
 <p>解决办法:</p>
 <p><strong>将ngp.cpp中的声明注释掉!</strong></p>
-<p><img src="E:\hexo\Compile-Netgen-WITH-OpenCascade\10.png" alt="结合OCCT编译Netgen10"></p>
+<p><img src="http://7xtbgk.com2.z0.glb.qiniucdn.com/netgen110.png" alt="结合OCCT编译Netgen10"></p>
 <p>问题:</p>
 <p>以上包含后出现无法解析的外部符号:</p>
-<p><img src="E:\hexo\Compile-Netgen-WITH-OpenCascade\8.png" alt="结合OCCT编译Netgen8"></p>
+<p><img src="http://7xtbgk.com2.z0.glb.qiniucdn.com/netgen18.png" alt="结合OCCT编译Netgen8"></p>
 <p>这是因为occpkg.cpp中调用了:</p>
 <p>static VisualSceneOCCGeometry vsoccgeom;</p>
 <p>而以上类却找不到实现的cpp , 而E:\NetGen\netgen-5.0.0\libsrc\occ\vsocc.cpp就在occ文件夹下. </p>
