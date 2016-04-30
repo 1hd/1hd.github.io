@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      范型算法_非变易算法 | 煎蛋不好吃&#39;Blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="煎蛋不好吃">
+    
+    
+
+    <meta name="description" content="8, 范型算法_非变易算法定义
+在不改变操作对象的前提下, 对元素进行处理, 比如 查找,子序列搜索,统计等. 
+具体包含: 
+
+for_each
+find
+find_if
+adjacent_find
+find_first_of
+count
+count_if
+mismatch
+equal
+search
+
+for_each对区域内每一个元素应用func函数
+find对区域内 返回第一个==val的迭">
+<meta property="og:type" content="article">
+<meta property="og:title" content="范型算法_非变易算法 | 煎蛋不好吃'Blog">
+<meta property="og:url" content="http://yoursite.com/2016/04/30/范型算法-非变易算法/index.html">
+<meta property="og:site_name" content="煎蛋不好吃'Blog">
+<meta property="og:description" content="8, 范型算法_非变易算法定义
+在不改变操作对象的前提下, 对元素进行处理, 比如 查找,子序列搜索,统计等. 
+具体包含: 
+
+for_each
+find
+find_if
+adjacent_find
+find_first_of
+count
+count_if
+mismatch
+equal
+search
+
+for_each对区域内每一个元素应用func函数
+find对区域内 返回第一个==val的迭">
+<meta property="og:updated_time" content="2016-04-30T03:54:43.447Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="范型算法_非变易算法 | 煎蛋不好吃'Blog">
+<meta name="twitter:description" content="8, 范型算法_非变易算法定义
+在不改变操作对象的前提下, 对元素进行处理, 比如 查找,子序列搜索,统计等. 
+具体包含: 
+
+for_each
+find
+find_if
+adjacent_find
+find_first_of
+count
+count_if
+mismatch
+equal
+search
+
+for_each对区域内每一个元素应用func函数
+find对区域内 返回第一个==val的迭">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">煎蛋不好吃&#39;Blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          我就写一写
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">范型算法_非变易算法</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-04-30" class="post-meta__date date">2016-04-30</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/范型算法-STL/">范型算法,STL</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="8-范型算法-非变易算法"><a href="#8-范型算法-非变易算法" class="headerlink" title="8, 范型算法_非变易算法"></a>8, 范型算法_非变易算法</h2><p><strong>定义</strong></p>
+<pre><code>在不改变操作对象的前提下, 对元素进行处理, 比如 查找,子序列搜索,统计等. 
+</code></pre><p>具体包含: </p>
+<ol>
+<li>for_each</li>
+<li>find</li>
+<li>find_if</li>
+<li>adjacent_find</li>
+<li>find_first_of</li>
+<li>count</li>
+<li>count_if</li>
+<li>mismatch</li>
+<li>equal</li>
+<li>search</li>
+</ol>
+<h3 id="for-each"><a href="#for-each" class="headerlink" title="for_each"></a>for_each</h3><p>对区域内每一个元素应用func函数</p>
+<h3 id="find"><a href="#find" class="headerlink" title="find"></a>find</h3><p>对区域内 返回第一个==val的迭代器, 否则返回end()</p>
+<h3 id="find-if"><a href="#find-if" class="headerlink" title="find_if"></a>find_if</h3><p>对区域内,返回符合操作的第一个元素,  对元素使用指定函数, 当函数返回true时, 返回. </p>
+<h3 id="adjacent-find"><a href="#adjacent-find" class="headerlink" title="adjacent_find"></a>adjacent_find</h3><p>对区域内, 返回第一个符合操作的元素迭代器. 如果一个元素等于它的下一个元素, 则返回该元素的迭代器. </p>
+<h3 id="adjacent-find-2"><a href="#adjacent-find-2" class="headerlink" title="adjacent_find(2)"></a>adjacent_find(2)</h3><p>对区域内, 返回第一个符合操作的元素迭代器. 使用自定义函数判断元素和它下一个元素,如果函数返回true,则返回.否则返回end()</p>
+<h3 id="find-first-of"><a href="#find-first-of" class="headerlink" title="find_first_of"></a>find_first_of</h3><p>两个区域. 返回第一个区域内的元素迭代器 it1, 使得对于区域2内某个元素迭代器it2, 满足<em>it1==</em>it2 ,没找到返回end()</p>
+<h3 id="count"><a href="#count" class="headerlink" title="count"></a>count</h3><p>返回个val值相同的个数. </p>
+<h3 id="count-if"><a href="#count-if" class="headerlink" title="count_if"></a>count_if</h3><p>返回满足提供函数==true的个数</p>
+<h2 id="mismatch-1"><a href="#mismatch-1" class="headerlink" title="mismatch(1)"></a>mismatch(1)</h2><p>返回在两个区域内 第一个不一样的元素的迭代器</p>
+<h3 id="mismatch-2"><a href="#mismatch-2" class="headerlink" title="mismatch(2)"></a>mismatch(2)</h3><p>返回在两个区域内, 两者同步前进 中第一个对于给定函数==false的迭代第</p>
+<h3 id="equal-1"><a href="#equal-1" class="headerlink" title="equal(1)"></a>equal(1)</h3><p>两个区域同步前进,当同位置两元素相等时,返回true,否则false</p>
+<h3 id="equal-2"><a href="#equal-2" class="headerlink" title="equal(2)"></a>equal(2)</h3><p>使用自定义函数来判断</p>
+<h3 id="search-1"><a href="#search-1" class="headerlink" title="search(1)"></a>search(1)</h3><p>在两个区域中, 在第一个区域内, 查找连续的一段元素和第二个区域完全相等.找到则返回第一个区域中相等段的第一个元素的迭代器. </p>
+<h3 id="search-2"><a href="#search-2" class="headerlink" title="search(2)"></a>search(2)</h3><p>使用自定义函数来判断,代替1中的相等. </p>
+<p>注:<br>v.end() 并不是最后一个元素, 是一个结束符.</p>
+<p>一般第一个是判断是否相等, 第二个是允许用户自定义行为去判断处理</p>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

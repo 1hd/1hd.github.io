@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Compile_Netgen_WITH_OpenCascade | 煎蛋不好吃&#39;Blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="煎蛋不好吃">
+    
+    
+
+    <meta name="description" content="结合OCCT编译Netgendate: 2016-04-23 19:54:25
+前言目前大多数netgen编译的教程都是without OCCT. 
+环境:
+windows 7 
+VS2010 
+Open Cascade6.5.1
+Netgen5.0.0
+编译版本: 
+debug     x64
+Netgen5.0.0下载下载源文件: 
+Netgen5.0.0 x64.exe
+第三方库文件:
+pt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Compile_Netgen_WITH_OpenCascade | 煎蛋不好吃'Blog">
+<meta property="og:url" content="http://yoursite.com/2016/04/23/Compile-Netgen-WITH-OpenCascade/index.html">
+<meta property="og:site_name" content="煎蛋不好吃'Blog">
+<meta property="og:description" content="结合OCCT编译Netgendate: 2016-04-23 19:54:25
+前言目前大多数netgen编译的教程都是without OCCT. 
+环境:
+windows 7 
+VS2010 
+Open Cascade6.5.1
+Netgen5.0.0
+编译版本: 
+debug     x64
+Netgen5.0.0下载下载源文件: 
+Netgen5.0.0 x64.exe
+第三方库文件:
+pt">
+<meta property="og:image" content="http://7xtbgk.com2.z0.glb.clouddn.com/netgen1.png">
+<meta property="og:image" content="http://7xtbgk.com2.z0.glb.qiniucdn.com/netgen15.png">
+<meta property="og:image" content="http://7xtbgk.com2.z0.glb.qiniucdn.com/netgen16.png">
+<meta property="og:image" content="http://7xtbgk.com2.z0.glb.qiniucdn.com/netgen17.png">
+<meta property="og:image" content="http://7xtbgk.com2.z0.glb.qiniucdn.com/netgen19.png">
+<meta property="og:image" content="http://7xtbgk.com2.z0.glb.qiniucdn.com/netgen110.png">
+<meta property="og:image" content="http://7xtbgk.com2.z0.glb.qiniucdn.com/netgen18.png">
+<meta property="og:updated_time" content="2016-04-30T03:54:49.751Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Compile_Netgen_WITH_OpenCascade | 煎蛋不好吃'Blog">
+<meta name="twitter:description" content="结合OCCT编译Netgendate: 2016-04-23 19:54:25
+前言目前大多数netgen编译的教程都是without OCCT. 
+环境:
+windows 7 
+VS2010 
+Open Cascade6.5.1
+Netgen5.0.0
+编译版本: 
+debug     x64
+Netgen5.0.0下载下载源文件: 
+Netgen5.0.0 x64.exe
+第三方库文件:
+pt">
+<meta name="twitter:image" content="http://7xtbgk.com2.z0.glb.clouddn.com/netgen1.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">煎蛋不好吃&#39;Blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          我就写一写
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Compile_Netgen_WITH_OpenCascade</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-04-23" class="post-meta__date date">2016-04-23</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/Netgen-Opencascade/">Netgen,Opencascade</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h1 id="结合OCCT编译Netgen"><a href="#结合OCCT编译Netgen" class="headerlink" title="结合OCCT编译Netgen"></a>结合OCCT编译Netgen</h1><p>date: 2016-04-23 19:54:25</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>目前大多数netgen编译的教程都是without OCCT. </p>
+<p>环境:</p>
+<p>windows 7 </p>
+<p>VS2010 </p>
+<p>Open Cascade6.5.1</p>
+<p>Netgen5.0.0</p>
+<p>编译版本: </p>
+<p>debug     x64</p>
+<h2 id="Netgen5-0-0下载"><a href="#Netgen5-0-0下载" class="headerlink" title="Netgen5.0.0下载"></a>Netgen5.0.0下载</h2><p>下载源文件: </p>
+<p><a href="http://sourceforge.net/projects/netgen-mesher/files/netgen-mesher/5.0/Netgen-5.0.0_x64.exe/download" target="_blank" rel="external">Netgen5.0.0 x64.exe</a></p>
+<p>第三方库文件:</p>
+<p><a href="http://sourceforge.net/projects/netgen-mesher/files/netgen-mesher/Additional%20Files/MSVC2010_Libs/x64/pthreads-w32_x64.zip/download" target="_blank" rel="external">pthreads-w32_x64.zip</a></p>
+<p><a href="http://sourceforge.net/projects/netgen-mesher/files/netgen-mesher/Additional%20Files/MSVC2010_Libs/x64/TclTkTixTogl_x64.zip/download" target="_blank" rel="external">TclTkTixTogl_x64.zip</a></p>
+<p><a href="http://www.opencascade.org/" target="_blank" rel="external">Opencascade</a></p>
+<p>注: 这里必须预先已经编译好OCCT6.5.1 本文默认读者已经编译好. 可直接调用库文件进行开发.</p>
+<h2 id="文件排放结构"><a href="#文件排放结构" class="headerlink" title="文件排放结构"></a>文件排放结构</h2><p><img src="http://7xtbgk.com2.z0.glb.clouddn.com/netgen1.png" alt="文件结构"></p>
+<h2 id="编译前准备工作"><a href="#编译前准备工作" class="headerlink" title="编译前准备工作"></a>编译前准备工作</h2><h3 id="修改windows目录下的postBuild-netgen-bat文件"><a href="#修改windows目录下的postBuild-netgen-bat文件" class="headerlink" title="修改windows目录下的postBuild_netgen.bat文件:"></a>修改windows目录下的postBuild_netgen.bat文件:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">删除下面代码：</span><br><span class="line"></span><br><span class="line">    if defined NETGENDIR  ( </span><br><span class="line">       echo Environment variable NETGENDIR found: %NETGENDIR%</span><br><span class="line">       set INSTALL_FOLDER=%NETGENDIR%\..</span><br><span class="line">    ) else (</span><br><span class="line">       echo Environment variable NETGENDIR not found.... using default location!!!</span><br><span class="line">       if /i &quot;%W_WO_OCC%&quot; == &quot;OCC&quot; (</span><br><span class="line">          set INSTALL_FOLDER=%PROJ_DIR%..\..\%PROJ_NAME%-instOCC_%BUILD_ARCH%</span><br><span class="line">       ) else (</span><br><span class="line">          set INSTALL_FOLDER=%PROJ_DIR%..\..\%PROJ_NAME%-instNoOCC_%BUILD_ARCH%</span><br><span class="line">       )   </span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">替换为</span><br><span class="line"></span><br><span class="line">set INSTALL_FOLDER=G:\netgen5.0</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">在文件末尾添加</span><br><span class="line"></span><br><span class="line">REM *** Copy the 3rd Library files into the Install Folder ***</span><br><span class="line"></span><br><span class="line">    set TCL_LIB_DIR=%INSTALL_FOLDER%\ext_libs\tcl\lib</span><br><span class="line">    set TCL_BIN_DIR=%PROJ_DIR%..\..\ext_libs\tcl\bin</span><br><span class="line">    set PTHREAD_LIB_DIR=%PROJ_DIR%..\..\ext_libs\pthread-w32\lib</span><br><span class="line">    echo Installing 3rd Library files into %INSTALL_FOLDER%\bin ....</span><br><span class="line">    xcopy  &quot;%TCL_BIN_DIR%\*.dll&quot; &quot;%INSTALL_FOLDER%\bin\&quot; /i /d /y</span><br><span class="line">    xcopy  &quot;%PTHREAD_LIB_DIR%\*.dll&quot; &quot;%INSTALL_FOLDER%\bin\&quot; /i /d /y</span><br><span class="line">    xcopy  &quot;%TCL_LIB_DIR%&quot; &quot;%INSTALL_FOLDER%\lib\&quot; /e /i /d /y</span><br><span class="line">    if errorlevel 1 goto ThreerdLibraryFailed</span><br><span class="line">    echo Installing 3rd Library Files: Completed OK!!</span><br><span class="line">    :ThreerdLibraryFailed</span><br><span class="line">    echo POSTBUILD Script for %TCL_LIB_DIR% FAILED.....</span><br></pre></td></tr></table></figure>
+<h2 id="编译Netgen5-0-0"><a href="#编译Netgen5-0-0" class="headerlink" title="编译Netgen5.0.0"></a>编译Netgen5.0.0</h2><p>使用VS2010打开 E:\NetGen5.0\netgen-5.0.0\windows\netgen-5.0.sln</p>
+<h3 id="出现问题1"><a href="#出现问题1" class="headerlink" title="出现问题1"></a>出现问题1</h3><p><img src="http://7xtbgk.com2.z0.glb.qiniucdn.com/netgen15.png" alt="问题1"></p>
+<p>解决办法:</p>
+<h4 id="PI问题"><a href="#PI问题" class="headerlink" title="PI问题"></a>PI问题</h4><p>PI没有定义, 这里我们使用改版后的M_PI</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">在 e:\NetGen\netgen-5.0.0\libsrc\occ\Partition_Loop2d.cxx 文件的开头加入以下宏定义: </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    #ifndef PI</span><br><span class="line">    </span><br><span class="line">    #define PI M_PI</span><br><span class="line">    </span><br><span class="line">    #endif</span><br><span class="line"></span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+<h3 id="value问题"><a href="#value问题" class="headerlink" title="#    value问题"></a>#    value问题</h3><p>value: 不是 Extreme_ExtPS 的成员</p>
+<p><img src="http://7xtbgk.com2.z0.glb.qiniucdn.com/netgen16.png" alt="问题2"></p>
+<p>在代码中我们可以看到作者为了兼顾OCCT多版本, 所作出的注释<br>所以,我们将V6.3行注释, 删除v6.5行的注释</p>
+<p>接着编译…………</p>
+<h3 id="出现问题2"><a href="#出现问题2" class="headerlink" title="出现问题2"></a>出现问题2</h3><p><strong>无法解析的外部符号 Ng_occ_Init</strong>  </p>
+<p><img src="http://7xtbgk.com2.z0.glb.qiniucdn.com/netgen17.png" alt="Nginit问题"></p>
+<p>1,在附加目录中包含 (主目录)\libsrc\occ<br>2,在e:\NetGen\netgen-5.0.0\ng\ngpkg.cpp文件中 </p>
+<pre><code>#include &lt;occpkg.cpp&gt;
+</code></pre><p>注意: 该包含放在其他include之前.</p>
+<p>编译……</p>
+<p>问题:</p>
+<p>Ng_occ_Init调用不明确</p>
+<p><img src="http://7xtbgk.com2.z0.glb.qiniucdn.com/netgen19.png" alt="结合OCCT编译Netgen9"></p>
+<p>解决办法:</p>
+<p><strong>将ngp.cpp中的声明注释掉!</strong></p>
+<p><img src="http://7xtbgk.com2.z0.glb.qiniucdn.com/netgen110.png" alt="结合OCCT编译Netgen10"></p>
+<p>问题:</p>
+<p>以上包含后出现无法解析的外部符号:</p>
+<p><img src="http://7xtbgk.com2.z0.glb.qiniucdn.com/netgen18.png" alt="结合OCCT编译Netgen8"></p>
+<p>这是因为occpkg.cpp中调用了:</p>
+<p>static VisualSceneOCCGeometry vsoccgeom;</p>
+<p>而以上类却找不到实现的cpp , 而E:\NetGen\netgen-5.0.0\libsrc\occ\vsocc.cpp就在occ文件夹下. </p>
+<p>解决办法: </p>
+<p>项目-&gt;添加现有项:</p>
+<blockquote>
+<p>vsocc.hpp</p>
+<p>vsocc.cpp</p>
+</blockquote>
+<p>接着编译….</p>
+<p>成功!</p>
+<h2 id="编译nglib"><a href="#编译nglib" class="headerlink" title="编译nglib"></a>编译nglib</h2><p>需要修改postBuild_nglib.bat文件:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">删除下面代码：</span><br><span class="line"></span><br><span class="line">if defined NETGENDIR (</span><br><span class="line">   echo Environment variable NETGENDIR found: %NETGENDIR%</span><br><span class="line">   set INSTALL_FOLDER=%NETGENDIR%\..</span><br><span class="line">) else (</span><br><span class="line">   echo Environment variable NETGENDIR not found.... using default location!!!</span><br><span class="line">   if /i &quot;%W_WO_OCC%&quot; == &quot;OCC&quot; (</span><br><span class="line">      set INSTALL_FOLDER=%PROJ_DIR%..\..\%PROJ_NAME%-instOCC_%BUILD_ARCH%</span><br><span class="line">   ) else (</span><br><span class="line">      set INSTALL_FOLDER=%PROJ_DIR%..\..\%PROJ_NAME%-instNoOCC_%BUILD_ARCH%</span><br><span class="line">   )   </span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">替换为</span><br><span class="line"></span><br><span class="line">set INSTALL_FOLDER=G:\netgen5.0</span><br></pre></td></tr></table></figure>
+<p>发现项目中竟然没有x64项目和debug(OCC) 所以只能自己在配置器中自己定义! </p>
+<p>注意! 这样定义只是个名称而已, 加入OCC关键的体现地方在于宏定义,<br>即 只要是with OCC就必须要在预处理器中定义: </p>
+<p><strong>_OCC64<br>Standard_EXPORT=<br>OCCGEOMETRY</strong></p>
+<p>这是非常关键的, 否则就不能称之为 WITH OCC !!!! </p>
+<p>编译非常顺利. 直接完成. </p>
+<p>编译完成后,运行nglib文件夹下的ng_vol.cpp示例程序.如果一切运行正常, 打印出正确的信息. 那么证明一切顺利. </p>
+<h1 id="注"><a href="#注" class="headerlink" title="注:"></a>注:</h1><h2 id="备注1"><a href="#备注1" class="headerlink" title="备注1"></a>备注1</h2><p>本文中编译过程中默认 读者知道如何将OCCT的.h文件 .lib文件目录如何添加到netgen和nglib项目中</p>
+<h2 id="备注2"><a href="#备注2" class="headerlink" title="备注2"></a>备注2</h2><p>本文默认, 读者知道如何在编译完成之后 配置示例程序.</p>
+<h2 id="备注3"><a href="#备注3" class="headerlink" title="备注3"></a>备注3</h2><p>如果编译一切都顺利.只是会出现postBuild之类的FAILED错误. 这是因为post_Build.bat文件中要求的文件拷贝没有正确. 如果你真的搞不懂, 那你就自己手动拷贝即可.不用非得让程序自动拷贝. (其实仔细研究post_Build.bat文件,就知道也就那么回事了.)</p>
+<h1 id="参考学习"><a href="#参考学习" class="headerlink" title="参考学习"></a>参考学习</h1><p><a href="http://netgen-mesher.sourceforge.net/docs/ng4.pdf" target="_blank" rel="external">NetGen用户手册</a></p>
+<p><a href="http://blog.csdn.net/zhouschina/article/details/9050373" target="_blank" rel="external">http://blog.csdn.net/zhouschina/article/details/9050373</a></p>
+<p><a href="http://blog.csdn.net/pizibing880909/article/details/21710767" target="_blank" rel="external">http://blog.csdn.net/pizibing880909/article/details/21710767</a></p>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
